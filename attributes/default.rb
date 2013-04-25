@@ -7,6 +7,3 @@
 
 default[:pdepend][:install_method] = "pear"
 default[:pdepend][:version] = "latest"
-
-#composer install only
-default[:pdepend][:prefix] = "/usr/bin"

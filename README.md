@@ -27,7 +27,7 @@ Requirements
 Attributes
 ==========
 
-* `node['pdepend']['install_method']` - Installation method, "pear" or "composer", defaults to "pear"
+* `node['pdepend']['install_method']` - Installation method, "pear", "composer" or "phar" defaults to "pear"
 * `node['pdepend']['version']` - The pdepend version that will be installed, defaults to "latest"
 * `node['pdepend']['prefix']` - The composer.json bin-dir, defaults to "/usr/bin" (composer install method only)
 
@@ -36,9 +36,9 @@ Usage
 
 1) include `recipe[pdepend]` in a run list
 2)
-	change the attributes
-	--- OR ---
-	override the attribute on a higher level (http://wiki.opscode.com/display/chef/Attributes#Attributes-AttributesPrecedence)
+    change the attributes
+    --- OR ---
+    override the attribute on a higher level (http://wiki.opscode.com/display/chef/Attributes#Attributes-AttributesPrecedence)
 
 References
 ==========

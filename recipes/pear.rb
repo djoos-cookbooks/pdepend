@@ -14,19 +14,19 @@ end
 
 #upgrade PEAR
 php_pear "PEAR" do
-	action :upgrade
+    action :upgrade
 end
 
 #pdepend PEAR channel
 pearhub_chan = php_pear_channel "pear.pdepend.org" do
-	action :discover
+    action :discover
 end
 
 #upgrade pdepend
 php_pear "PHP_Depend-beta" do
-	channel pearhub_chan.channel_name
-	if node[:pdepend][:version] != "latest"
-		version "#{node[:pdepend][:version]}"
-	end
-	action :upgrade
+    channel pearhub_chan.channel_name
+    if node[:pdepend][:version] != "latest"
+        version "#{node[:pdepend][:version]}"
+    end
+    action :upgrade
 end
