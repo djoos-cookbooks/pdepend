@@ -28,5 +28,5 @@ php_pear "PHP_Depend-beta" do
     if node[:pdepend][:version] != "latest"
         version "#{node[:pdepend][:version]}"
     end
-    action :upgrade
+    action :upgrade if node[:pdepend][:version] == "latest"
 end
