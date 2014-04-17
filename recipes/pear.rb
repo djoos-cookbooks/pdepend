@@ -22,11 +22,14 @@ pearhub_chan = php_pear_channel "pear.pdepend.org" do
     action :discover
 end
 
-#upgrade pdepend
-php_pear "PHP_Depend-beta" do
+#install/upgrade pdepend
+package = "PHP_Depend"
+
+php_pear package do
     channel pearhub_chan.channel_name
     if node[:pdepend][:version] != "latest"
         version "#{node[:pdepend][:version]}"
     end
-    action :upgrade if node[:pdepend][:version] == "latest"
+	#upgrade when package is installed and latest version is required
+	action ( !(`pear list | grep #{package}`.empty?) and node[:pdepend][:version] == "latest" ) ? :upgrade : :install
 end
