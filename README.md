@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/escapestudios-cookbooks/pdepend.png)](http://travis-ci.org/escapestudios-cookbooks/pdepend)
+
 Description
 ===========
 
