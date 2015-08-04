@@ -7,6 +7,12 @@
 
 include_recipe 'php'
 
+pdepend_prerequisite_packages.each do |pkg|
+  package pkg do
+    action :install
+  end
+end
+
 # PHP Extension and Application Repository PEAR channel
 php_pear_channel 'pear.php.net' do
   action :update
