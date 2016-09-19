@@ -4,8 +4,6 @@ driver:
 
 provisioner:
   name: chef_zero
-  solo_rb:
-    ssl_verify_mode: verify_peer
 
 platforms:
   - name: ubuntu-12.04
@@ -35,4 +33,3 @@ suites:
     attributes:
       pdepend:
         install_method: phar
-
