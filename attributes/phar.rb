@@ -2,7 +2,7 @@
 # Cookbook Name:: pdepend
 # Attributes:: phar
 #
-# Copyright 2013-2014, Escape Studios
+# Copyright (c) 2016, David Joos
 #
 
 default['pdepend']['phar_url'] = 'http://static.pdepend.org/php/latest/pdepend.phar'

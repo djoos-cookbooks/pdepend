@@ -2,7 +2,7 @@
 # Cookbook Name:: pdepend
 # Attributes:: default
 #
-# Copyright 2013-2014, Escape Studios
+# Copyright (c) 2016, David Joos
 #
 
 default['pdepend']['install_method'] = 'composer'

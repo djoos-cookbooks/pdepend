@@ -2,7 +2,7 @@
 # Cookbook Name:: pdepend
 # Recipe:: composer
 #
-# Copyright 2013-2014, Escape Studios
+# Copyright (c) 2016, David Joos
 #
 
 include_recipe 'composer'
@@ -17,11 +17,11 @@ directory pdepend_dir do
 end
 
 # figure out what version to install
-if node['pdepend']['version'] != 'latest'
-  version = node['pdepend']['version']
-else
-  version = '*.*.*'
-end
+version = if node['pdepend']['version'] != 'latest'
+            node['pdepend']['version']
+          else
+            '*.*.*'
+          end
 
 # composer.json
 template "#{pdepend_dir}/composer.json" do
