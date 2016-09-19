@@ -2,7 +2,7 @@
 # Cookbook Name:: pdepend
 # Library:: helpers
 #
-# Copyright 2013-2015, Escape Studios
+# Copyright (c) 2016, David Joos
 #
 
 # PDEPEND module
