@@ -32,8 +32,7 @@ http://pdepend.org/
 * `node['pdepend']['version']` - The pdepend version that will be installed, defaults to "latest"
 * `node['pdepend']['prefix']` - The composer.json bin-dir, defaults to "/usr/bin" (composer install method only)
 
-Usage
-=====
+## Usage
 
 1) include `recipe[pdepend]` in a run list
 2) change the attributes
