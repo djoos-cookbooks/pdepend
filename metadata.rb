@@ -3,7 +3,7 @@ maintainer 'David Joos'
 maintainer_email 'development@davidjoos.com'
 license 'MIT'
 description 'Installs/Configures pdepend'
-version '1.2.0'
+version '1.2.1'
 
 %w(debian ubuntu redhat centos fedora scientific amazon).each do |os|
   supports os
