@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: pdepend
+# Cookbook:: pdepend
 # Attributes:: default
 #
-# Copyright (c) 2016, David Joos
+# Copyright:: (c) 2016, David Joos
 #
 
 default['pdepend']['install_method'] = 'composer'

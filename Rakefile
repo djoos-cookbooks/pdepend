@@ -162,7 +162,7 @@ end
 # this module groups useful git commands together
 module GitCommands
   def self.ensure_branch(branch = 'master')
-    raise '[GIT] You must specify a branch.' if branch.blank?
+    raise '[GIT] You must specify a branch.' if branch.empty?
 
     return if /#{branch}/ =~ GeneralCommands.run('git rev-parse --abbrev-ref HEAD', 0, 1)
     raise '[GIT] Currently working on unexpected branch'
@@ -197,18 +197,15 @@ module KnifeCommands
 end
 
 namespace :style do
+  require 'cookstyle'
   require 'rubocop/rake_task'
-  require 'foodcritic'
 
-  desc 'Run Ruby style checks (RuboCop)'
-  RuboCop::RakeTask.new(:ruby)
-
-  desc 'Run Chef style checks (FoodCritic)'
-  FoodCritic::Rake::LintTask.new(:chef)
+  desc 'Run Cookstyle checks'
+  RuboCop::RakeTask.new(:cookstyle)
 end
 
 desc 'Run all syntax/lint checks'
-task :style => ['style:ruby', 'style:chef']
+task style: ['style:cookstyle']
 
 desc 'Run ChefSpec tests'
 RSpec::Core::RakeTask.new(:spec)
@@ -243,27 +240,27 @@ namespace :publish do
     end
   end
 
-  task :all => ['scm', 'chef:supermarket', 'chef:server']
+  task all: ['scm', 'chef:supermarket', 'chef:server']
 end
 
 desc 'Run lint checks'
-task :lint => %w(style)
+task lint: %w(style)
 
 desc 'Run unit tests'
-task :unit => %w(spec)
+task unit: %w(spec)
 
 desc 'Run Travis CI tests'
-task :travis => %w(lint unit)
+task travis: %w(lint unit)
 
 desc 'Run all integration tests'
-task :integration => %w(integration:vagrant)
+task integration: %w(integration:vagrant)
 
 desc 'Publish'
-task :publish => %w(publish:scm publish:chef:supermarket publish:chef:server)
+task publish: %w(publish:scm publish:chef:supermarket publish:chef:server)
 
 desc 'Release'
 task :release do
   ReleaseCommands.release(environment)
 end
 
-task :default => %w(lint unit integration)
+task default: %w(lint unit integration)

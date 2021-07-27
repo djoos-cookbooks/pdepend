@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: pdepend
+# Cookbook:: pdepend
 # Library:: helpers
 #
-# Copyright (c) 2016, David Joos
+# Copyright:: (c) 2016, David Joos
 #
 
 # PDEPEND module
@@ -13,7 +13,7 @@ module PDEPEND
     # Package names returned are determined by the platform running this recipe.
     def pdepend_prerequisite_packages
       value_for_platform(
-        'default' => ['libmagickwand-dev', 'libmagickcore-dev']
+        'default' => %w(libmagickwand-dev libmagickcore-dev)
       )
     end
   end
